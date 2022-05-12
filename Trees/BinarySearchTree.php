@@ -50,6 +50,25 @@ class BinarySearchTree {
     public function get_root(){
         return $this->root;
     }
+
+    public function lookup($value){
+
+        if(!$this->root)return false;
+        $currentNode= $this->root;
+        
+        while($currentNode){
+            if($value<$currentNode->data){
+                $currentNode= $currentNode->left;
+            }
+            else if($value > $currentNode->data){
+                $currentNode = $currentNode->right;
+            }
+            else if($value == $currentNode->data){  
+                return $currentNode;
+            }
+        }
+        return false;
+    }
     
 };
 
@@ -57,17 +76,13 @@ class BinarySearchTree {
 //--------------------------------------START MAIN----------------------------------
     $tree = new BinarySearchTree();
 
-    $tree->insert(10);
-    print_r($tree->get_root());
+    $tree->insert(9);
+    $tree->insert(4);
+    $tree->insert(6);
     $tree->insert(20);
-    print_r($tree->get_root());
-    $tree->insert(30);
-    print_r($tree->get_root());
-    $tree->insert(40);
-    print_r($tree->get_root());
-    $tree->insert(50);
-    
-
-    print_r($tree);
+    $tree->insert(170);
+    $tree->insert(15);
+    $tree->insert(1);
+    //print_r($tree->lookup(9)->left);
 
 ?>
