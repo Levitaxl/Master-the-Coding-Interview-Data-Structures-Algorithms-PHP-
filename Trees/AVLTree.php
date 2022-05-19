@@ -2,6 +2,8 @@
 
 // AVL tree
 
+//Sacado de https://gist.github.com/igorw/42bd2ea44c8fcc73232a
+
 class Node {
     public $value;
     public $left;
